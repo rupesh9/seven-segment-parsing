@@ -1,0 +1,25 @@
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+
+<style type="text/css">
+.divCenter {
+  border: 0px solid ;
+  padding-top: 50px;
+  text-align: center;
+  margin: 0px auto;
+  margin-top: 120px;
+  width: 40%;
+}
+
+</style>
+
+<div class="divCenter center" >
+<%= form_tag '/parse_invoice', accept: '.txt', multipart: true do %>
+  <label for="file">Upload File</label> 
+  <div class=".form-group">
+    <%= file_field_tag "file", class: "form-control", required: true %>
+  </div>
+  <br>
+  <%= submit_tag "upload", class: "btn btn-default"%>
+<% end %>
